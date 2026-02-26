@@ -4,10 +4,10 @@
 DEFAULT_COUNTRY="US"
 DEFAULT_STATE="California"
 DEFAULT_LOCALITY="Mountain View"
-DEFAULT_ORGANIZATION="crDroid"
-DEFAULT_ORG_UNIT="crDroid"
-DEFAULT_COMMON_NAME="crDroid"
-DEFAULT_EMAIL="contact@crdroid.net"
+DEFAULT_ORGANIZATION="AfterlifeOS"
+DEFAULT_ORG_UNIT="AfterlifeOS"
+DEFAULT_COMMON_NAME="AfterlifeOS"
+DEFAULT_EMAIL="android@android.com"
 
 # Construct the subject line directly using defaults
 subject="/C=${DEFAULT_COUNTRY}/ST=${DEFAULT_STATE}/L=${DEFAULT_LOCALITY}/O=${DEFAULT_ORGANIZATION}/OU=${DEFAULT_ORG_UNIT}/CN=${DEFAULT_COMMON_NAME}/emailAddress=${DEFAULT_EMAIL}"
@@ -40,13 +40,13 @@ done
 
 ## Create vendor for keys
 rm ~/.android-certs/make_key
-rm -rf vendor/lineage-priv
-mkdir -p vendor/lineage-priv
-mv ~/.android-certs vendor/lineage-priv/keys
+rm -rf vendor/afterlife-priv
+mkdir -p vendor/afterlife-priv
+mv ~/.android-certs vendor/afterlife-priv/keys
 
-echo "PRODUCT_DEFAULT_DEV_CERTIFICATE := vendor/lineage-priv/keys/releasekey" > vendor/lineage-priv/keys/keys.mk
+echo "PRODUCT_DEFAULT_DEV_CERTIFICATE := vendor/afterlife-priv/keys/releasekey" > vendor/afterlife-priv/keys/keys.mk
 
-cat <<EOF > vendor/lineage-priv/keys/BUILD.bazel
+cat <<EOF > vendor/afterlife-priv/keys/BUILD.bazel
 filegroup(
     name = "android_certificate_directory",
     srcs = glob([
@@ -59,8 +59,8 @@ EOF
 
 echo ""
 echo "Done! Now build as usual."
-echo "If builds aren't being signed, add '-include vendor/lineage-priv/keys/keys.mk' to your device mk file"
+echo "If builds aren't being signed, add '-include vendor/afterlife-priv/keys/keys.mk' to your device mk file"
 echo ""
-echo "IMPORTANT: Make copies of your vendor/lineage-priv folder as it contains your keys!"
+echo "IMPORTANT: Make copies of your vendor/afterlife-priv folder as it contains your keys!"
 
 sleep 3
