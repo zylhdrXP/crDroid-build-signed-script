@@ -1,4 +1,4 @@
-# crDroid-build-signed-script
+# AfterlifeOS-build-signed-script
 Script for creating a signing build environment
 
 ## Disclaimer
