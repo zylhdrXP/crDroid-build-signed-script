@@ -59,7 +59,6 @@ EOF
 
 echo ""
 echo "Done! Now build as usual."
-echo "If builds aren't being signed, add '-include vendor/afterlife-priv/keys/keys.mk' to your device mk file"
 echo ""
 echo "IMPORTANT: Make copies of your vendor/afterlife-priv folder as it contains your keys!"
 
