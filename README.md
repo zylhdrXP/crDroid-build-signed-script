@@ -11,14 +11,8 @@ This script only works for password-less keys (DO NOT SET A PASSWORD)
 Download the script in your root build directory and run it
 
 ```sh
-wget https://raw.githubusercontent.com/zylhdrXP/crDroid-build-signed-script/main/create-signed-env.sh
+wget https://raw.githubusercontent.com/zylhdrXP/crDroid-build-signed-script/refs/heads/afl/create-signed-env.sh
 chmod +x create-signed-env.sh
 ./create-signed-env.sh
 ```
-
-### Prep device tree (for other ROMs - not needed on crDroid)
-In your device tree (or common device tree) add:
-
-`-include vendor/lineage-priv/keys/keys.mk`
-
 Build as usual!
